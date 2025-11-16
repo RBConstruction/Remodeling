@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>R & B Construction – Remodeling America One Home at a Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --green: #00c853;
+      --black: #111111;
+      --light-bg: #f5f5f5;
+      --text: #333333;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header / Nav */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-area img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--black);
+      letter-spacing: 0.03em;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #777777;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-weight: 500;
+      color: #444444;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+
+    /* Hero */
+
+    .hero {
+      background: linear-gradient(135deg, #0b0b0b 0%, #1b1b1b 50%, #111111 100%);
+      color: #ffffff;
+      padding: 3rem 1.25rem 3.25rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a5d6a7;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      max-width: 30rem;
+      margin-bottom: 1.25rem;
+      color: #e0e0e0;
+    }
+
+    .hero-bullets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-badge span {
+      font-size: 0.85rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 6px 18px rgba(0, 200, 83, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #e0e0e0;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #bdbdbd;
+    }
+
+    .hero-highlight-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.9rem;
+    }
+
+    .hero-highlight-box h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-highlight-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hero-highlight-box li {
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-highlight-box li::before {
+      content: "•";
+      color: var(--green);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    /* Services / Cards */
+
+    .section {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .section-heading {
+      max-width: var(--max-width);
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.4rem;
+      color: var(--black);
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: #666666;
+      max-width: 26rem;
+    }
+
+    .cards {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1.5rem;
+      flex-wrap: wrap; /* keeps it responsive */
+      margin-top: 1.25rem;
+    }
+
+    .card {
+      flex: 1 1 260px;
+      max-width: 340px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      border-top: 3px solid var(--green);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+      color: var(--black);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      color: #555555;
+    }
+
+    .card ul {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: #555555;
+    }
+
+    .card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact Section */
+
+    .contact-section {
+      background: #ffffff;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .contact-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-intro h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--black);
+    }
+
+    .contact-intro p {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-intro ul {
+      margin-left: 1.1rem;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    .contact-form {
+      background: var(--light-bg);
+      border-radius: 10px;
+      padding: 1.25rem;
+      border: 1px solid #e0e0e0;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      color: var(--black);
+    }
+
+    .form-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+      color: #555555;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #cccccc;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    .form-row textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: #777777;
+      margin-top: 0.4rem;
+    }
+
+    .contact-submit {
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--green);
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #111111;
+      color: #bdbdbd;
+      padding: 1.25rem 1.25rem 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .footer-inner span {
+      display: inline-block;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+      .hero-inner,
+      .contact-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none; /* simple nav for now on mobile */
+      }
+
+      .hero {
+        padding-top: 2.25rem;
+        padding-bottom: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo-area">
+          <!-- Replace logo.png with your actual logo file in the same folder -->
+          <img src="logo.png" alt="R & B Construction Logo" />
+          <div>
+            <div class="logo-text-main">R &amp; B Construction</div>
+            <div class="logo-text-sub">Remodeling America one home at a time</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#contact" class="nav-cta">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">Reliable • Fair-priced • Stress-free</div>
+        <h1>Trusted handyman help for any project you have.</h1>
+        <p class="hero-tagline">
+      Family-owned, hardworking, and ready to help—whether it’s kitchens, bathrooms, decks, or everyday repairs. Reach out today and let’s get your home project started..
+        </p>
+
+        <div class="hero-bullets">
+          <div class="hero-badge">
+            <span>Everyday repairs &amp; remodeling</span>
+          </div>
+          <div class="hero-badge">
+            <span>Kitchen &amp; bathroom updates</span>
+          </div>
+          <div class="hero-badge">
+            <span>Decks &amp; home upgrades</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contact">
+            <button class="btn-primary" type="button">
+              Request a free estimate✨→
+            </button>
+          </a>
+          <a href="#services">
+            <button class="btn-secondary" type="button">
+              View services
+            </button>
+          </a>
+        </div>
+
+        <div class="hero-note">
+          Smart, budget-friendly home improvements that deliver real results without overpaying.
+        </div>
+      </div>
+
+      <div class="hero-highlight-box">
+        <h3>What we can help with:</h3>
+        <ul>
+          <li>Small handyman jobs and punch lists</li>
+          <li>Kitchens &amp; bathrooms – installs, updates, and repairs</li>
+          <li>Decks, railings, and outdoor repairs</li>
+          <li>Interior/exterior touch-ups and minor remodels</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / CARDS -->
+  <section class="section" id="services">
+    <div class="section-heading">
+      <div>
+        <h2>Home services we specialize in</h2>
+      </div>
+      <p>
+        Whether you need a few small repairs or a fresh new look for your space, we handle the details so you don’t have to.
+      </p>
+    </div>
+
+    <div class="cards">
+      <!-- Card 1: Everyday Repairs -->
+      <div class="card">
+        <h3>Everyday Repairs</h3>
+        <p>Quick fixes and small jobs to keep your home in top shape:</p>
+        <ul>
+          <li>Door, lock &amp; handle repairs</li>
+          <li>Drywall patching &amp; touch-ups</li>
+          <li>Caulking &amp; sealing (kitchen/bath)</li>
+          <li>Minor plumbing fixes (leaks, faucets)</li>
+          <li>Light fixture &amp; ceiling fan installs</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Kitchens & Bathrooms -->
+      <div class="card">
+        <h3>Kitchens &amp; Bathrooms</h3>
+        <p>Targeted updates that refresh the spaces you use every day:</p>
+        <ul>
+          <li>Cabinet installs &amp; adjustments</li>
+          <li>Backsplash &amp; tile repairs</li>
+          <li>Vanity, sink &amp; faucet replacements</li>
+          <li>Countertop and hardware updates</li>
+          <li>Small layout and cosmetic upgrades</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Decks & Home Upgrades -->
+      <div class="card">
+        <h3>Decks &amp; Home Upgrades</h3>
+        <p>Exterior and interior projects that add comfort and curb appeal:</p>
+        <ul>
+          <li>Deck repairs, resurfacing &amp; tightening</li>
+          <li>Railings, steps &amp; safety fixes</li>
+          <li>Trim, baseboards &amp; molding installs</li>
+          <li>Interior/exterior painting touch-ups</li>
+          <li>Small remodeling and upgrade projects</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-intro">
+        <h2>Ready to get your project on the schedule?</h2>
+        <p>
+          Tell us a little about your project and we’ll follow up with next steps, timing, and a no-pressure estimate.
+        </p>
+        <p>Great for:</p>
+        <ul>
+          <li>Honey-do lists &amp; punch list items</li>
+          <li>Small kitchen or bath refreshes</li>
+          <li>Deck repairs &amp; outdoor fixes</li>
+          <li>General handyman and home maintenance</li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h3>Request a free estimate</h3>
+
+        <!-- 
+          Using Web3Forms (free).
+          1. Sign up at Web3Forms and copy your Access Key.
+          2. Replace YOUR_ACCESS_KEY_HERE below with your actual key.
+        -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <!-- Required Web3Forms fields -->
+          <input type="hidden" name="access_key" value="c89c28f5-02c9-44d2-930b-72c27fdc918c" />
+          <input type="hidden" name="subject" value="New R &amp; B Construction Inquiry" />
+          <input type="hidden" name="from_name" value="R &amp; B Construction Website" />
+          <!-- Optional: redirect after success (you can change this later) -->
+          <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html" /> -->
+
+          <!-- Simple bot check field (optional but recommended) -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-row">
+            <label for="service">Type of project *</label>
+            <input
+              type="text"
+              id="service"
+              name="project_type"
+              placeholder="Example: drywall repair, deck repair, small bathroom refresh"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Project details *</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us what you’d like done, any timelines, and anything else we should know."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-note">
+            We’ll review your request and respond as soon as possible with next steps.
+          </div>
+
+          <button class="contact-submit" type="submit">
+            Send my request →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> R &amp; B Construction. All rights reserved.</span>
+      <span>Family-owned • Honest work • Neighborly service</span>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
